@@ -1,5 +1,7 @@
 # ElevenLabs TTS Reader
 
+![ElevenLabs TTS Reader](image.png)
+
 A beautiful text-to-speech reader with synchronized word highlighting and AI-powered study buddy features. Transform your learning experience with natural-sounding speech and interactive assistance.
 
 ![ElevenLabs TTS Reader](https://img.shields.io/badge/TTS-ElevenLabs-blue) ![AI](https://img.shields.io/badge/AI-OpenAI-green) ![React](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.2-blue)
