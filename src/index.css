@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Clean and simple word highlighting */
+.word-highlight {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: 0 1px;
+  display: inline;
+}
+
+.word-current {
+  background-color: #6366f1;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.word-spoken {
+  background-color: #e5e7eb;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.word-unspoken {
+  background-color: transparent;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.word-upcoming {
+  background-color: #e0e7ff;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.word-unspoken:hover {
+  background-color: #f3f4f6;
+}
+
+/* Text flow improvements */
+.text-lg {
+  letter-spacing: 0.025em;
+  word-spacing: 0.1em;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Progress bar */
+.progress-bar {
+  transition: width 0.1s ease-out;
+}
+
+/* Enhanced prose styling for markdown content */
+.prose {
+  color: #374151;
+  max-width: none;
+}
+
+.prose h1 {
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.prose h2 {
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 0.25rem;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.prose em {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.prose code {
+  background-color: #f3f4f6;
+  color: #7c3aed;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.prose blockquote {
+  border-left: 4px solid #d1d5db;
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background-color: #f9fafb;
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Clean word highlight spacing in prose */
+.prose .word-highlight {
+  margin: 0 1px;
+  padding: 2px 4px;
+  display: inline;
+}
+
+/* Reader text (normal text) color variations */
+.reader-text.word-current {
+  background-color: #6366f1;
+  color: white;
+}
+
+.reader-text.word-spoken {
+  background-color: #e5e7eb;
+  color: #6b7280;
+}
+
+.reader-text.word-unspoken {
+  background-color: transparent;
+  color: #374151;
+}
+
+.reader-text.word-upcoming {
+  background-color: #e0e7ff;
+  color: #374151;
+}
+
+/* Buddy text (interjections) - vibrant purple/pink theme */
+.buddy-text.word-current {
+  background-color: #ec4899;
+  color: white;
+  font-weight: 500;
+}
+
+.buddy-text.word-spoken {
+  background-color: #fce7f3;
+  color: #be185d;
+  font-weight: 500;
+}
+
+.buddy-text.word-unspoken {
+  background-color: #fdf2f8;
+  color: #be185d;
+  font-weight: 500;
+  border: 1px solid #fbcfe8;
+}
+
+.buddy-text.word-upcoming {
+  background-color: #f3e8ff;
+  color: #7c3aed;
+  font-weight: 500;
+  border: 1px solid #ddd6fe;
+}
+
+/* Buddy text hover effect */
+.buddy-text.word-unspoken:hover {
+  background-color: #f9a8d4;
+  color: #831843;
+}
+
+/* Static buddy text styling (for markdown view when not playing) */
+.buddy-text-static {
+  background-color: #fdf2f8;
+  color: #be185d;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #fbcfe8;
+  margin: 0 2px;
+  font-style: italic;
+}
+
+/* Better line height and spacing for readability */
+.prose p {
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.prose li {
+  line-height: 1.7;
+}
